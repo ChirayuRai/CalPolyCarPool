@@ -55,7 +55,14 @@ const App: React.FC = () => {
           <Content style={contentStyle}>
             <Home />
           </Content>
-          { isAuthenticated ? <Footer style={footerStyle}>Footer</Footer> : <></> }
+          { 
+            isAuthenticated ? 
+              <Footer style={footerStyle}>
+                Footer
+              </Footer>
+            : 
+              <></>
+          }
         </Layout>
       </Flex>
     </div>
