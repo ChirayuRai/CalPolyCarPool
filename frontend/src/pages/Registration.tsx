@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Layout, Typography, Form, Input, Button, Row, Col } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
-import AppHeader from '../components/AppHeader'; // Import the AppHeader component
+import LoggedOutHeader from '../components/LoggedOutHeader'; // Import the AppHeader component
 import './styles.css'; // Import the external CSS file
 
 
@@ -21,6 +21,29 @@ const onFinish = (values: any) => {
   // Add your logic for handling form submission here
 };
 
+const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const file = event.target.files?.[0]; // Get the first file from the selected files
+  const fileSizeLimit = 5 * 1024 * 1024; // 5 MB
+
+  // Check if a file was selected
+  if (file) {
+    // Check if the file size exceeds the limit
+    if (file.size > fileSizeLimit) {
+      alert('File size exceeds the limit of 5 MB');
+      return; // Don't proceed further
+    }
+
+    // You can perform additional checks or operations here
+    // For example, validate the file type, display a preview, etc.
+
+    // Do something with the file, such as upload it to a server or store it in state
+    console.log('Selected file:', file);
+  } else {
+    // No file selected
+    console.log('No file selected');
+  }
+};
+
 const Registration: React.FC = () => {
   const [interestFields, setInterestFields] = useState<string[]>(['']); // State to manage interest fields
 
@@ -36,9 +59,13 @@ const Registration: React.FC = () => {
     setInterestFields(newInterestFields);
   };
 
+  const handleLogin = () => {
+    console.log('Logging in...');
+  };
+
   return (
     <Layout style={{ minHeight: '100vh' }}>
-      <AppHeader />
+      <LoggedOutHeader onLogin={handleLogin}/>
       <Content style={contentStyle}>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '20px' }}>
           <div style={{ backgroundColor: '#fff', padding: '20px', borderRadius: '8px', boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)', width: '350px' }}>
@@ -115,11 +142,16 @@ const Registration: React.FC = () => {
                 <button className="custom-button" style={{ paddingInline: '15%' }} onClick={handleAddInterestField}>+</button>
               </Form.Item>
 
+              <b className='flex justify-start'>Address</b>
               <Form.Item
                 name="Address"
                 rules={[{ required: true, message: 'Please input your Address!' }]}
               >
                 <Input prefix={<UserOutlined />} placeholder="Address" />
+              </Form.Item>
+              
+              <Form.Item label={<b>Profile Picture</b>}>
+                <input type="file" accept=".png, .jpg, .jpeg, .svg" onChange={handleFileUpload} />
               </Form.Item>
 
               <Form.Item>
