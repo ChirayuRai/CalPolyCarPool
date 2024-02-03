@@ -7,20 +7,15 @@ import pool from './dbConn.js';
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  context: () => ({
-    return : {
-      db: pool
-    }
+});
+
+const vercel_server = await startStandaloneServer(server, {
+  listen: { port: 4000 },
+  context: async ({ req, res }) => ({
+    db: pool,
   })
 });
 
-// const vercel_server = await startStandaloneServer(server, {
-//   listen: { port: 4000 },
-//   context: async ({ req, res }) => ({
-//     db: pool,
-//   })
-// });
+console.log(`🚀  Server ready at: ${vercel_server.url}`);
+export default ApolloServer
 
-// console.log(`🚀  Server ready at: ${vercel_server.url}`);
-console.log("We are doing things")
-export default server.createHandler();
