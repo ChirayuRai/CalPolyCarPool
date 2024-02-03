@@ -22,7 +22,7 @@ const server = new ApolloServer({
   plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
 });
 // Ensure we wait for our server to start
-await server.start();
+// await server.start();
 
 // Set up our Express middleware to handle CORS, body parsing,
 // and our expressMiddleware function.
@@ -38,4 +38,5 @@ app.use(
 );
 
 
-export default await new Promise((resolve) => httpServer.listen({ port: 4000 }, resolve));
+// export default await new Promise((resolve) => httpServer.listen({ port: 4000 }, resolve));
+export default app
