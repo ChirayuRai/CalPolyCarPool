@@ -1,7 +1,28 @@
-import React from 'react'
+import React from 'react';
+import { Layout } from 'antd';
+import LoggedOutHeader from '../components/LoggedOutHeader';
 
-export default function landing() {
+const { Content } = Layout;
+const contentStyle: React.CSSProperties = {
+  textAlign: 'center',
+  minHeight: 'calc(100vh - 128px)', // 128px for header and footer
+  lineHeight: '120px',
+  backgroundColor: '#FFFFFF',
+};
+
+const Landing: React.FC = () => {
+  const handleLogin = () => {
+    console.log('Logging in...');
+  };
+
   return (
-    <div>landing</div>
-  )
-}
+    <Layout style={{ minHeight: '100vh' }}>
+      <LoggedOutHeader onLogin={handleLogin} />
+      <Content style={contentStyle}>
+        
+      </Content>
+    </Layout>
+  );
+};
+
+export default Landing;

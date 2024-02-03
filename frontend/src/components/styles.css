@@ -1,0 +1,14 @@
+.custom-button {
+  background-color: #FFBC12;
+  color: #FFFFFF;
+  border-radius: 8px;
+  font-weight: bold;
+  border: 0;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.custom-button:hover {
+  background-color: #C8A800;
+  color: #000000;
+  transform: scale(1.05);
+}
