@@ -1,7 +1,8 @@
-import AppLayout from './components/AppLayout'
+import React from 'react';
+import Registration from './pages/Registration'; // Adjust the path accordingly
 
 function App() {
-  return <AppLayout children={null} />;
+  return <Registration />;
 }
 
-export default App
+export default App;
