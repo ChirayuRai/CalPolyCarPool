@@ -33,9 +33,9 @@ app.use(
   // expressMiddleware accepts the same arguments:
   // an Apollo Server instance and optional configuration options
   expressMiddleware(server, {
-    context: async ({ req }) => ({ token: req.headers.token }),
+    context: async () => ({db: pool}),
   }),
 );
 
 
-// export default await new Promise((resolve) => httpServer.listen({ port: 4000 }, resolve));
+export default await new Promise((resolve) => httpServer.listen({ port: 4000 }, resolve));
