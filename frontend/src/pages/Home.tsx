@@ -1,7 +1,7 @@
 import { Button, Flex, Radio, RadioChangeEvent } from 'antd';
 import Title from 'antd/es/typography/Title';
 import { useState } from 'react';
-import AppHeader from '../components/AppHeader'; // Import the AppHeader component
+import './styles.css'; // Import the external CSS file
 
 const Home: React.FC = () => {
   const [isDriver, setIsDriver] = useState(true);
@@ -31,57 +31,50 @@ const Home: React.FC = () => {
     setDestination(e.target.value);
   }
 
-  const boxStyle: React.CSSProperties = {
-    width: '100%',
+  const containerStyle: React.CSSProperties = {
+    display: 'grid',
+    gap: '20px',
+    justifyContent: 'center',
+    alignItems: 'center',
     height: '80vh',
-    padding: "0 500px",
+  };
+  
+  const boxStyle: React.CSSProperties = {
+    padding: '20px',
+    borderRadius: '8px',
+    width: '350px',
+    textAlign: 'center',
   };
 
   return (
-    <Flex gap="middle" align="start" vertical>
-      <Flex 
-        style={boxStyle} 
-        justify="center" 
-        align="center" 
-        vertical gap="small"
-      >
-        {
-          !isActivated ?
-            <>
-              <Radio.Group defaultValue={destination} size="large" onChange={handleDestinationChange}>
-                <Radio.Button value="Campus">Campus</Radio.Button>
-                <Radio.Button value="Home">Home</Radio.Button>
-              </Radio.Group>
-              <Button 
-                onClick={handleRideRequest}
-                block 
-                style={{ width: "100%", height: 100, fontSize: 25 }}
-              >
-                I need a Ride!
-              </Button>
-              <Button
-                onClick={handleOfferDrive}
-                block
-                style={{ width: "100%", height: 100, fontSize: 25 }}
-                disabled={!isDriver}
-              >
-                I can Drive!
-              </Button>
-            </>
-          :
-            <>
-              <Title>{activatedText}</Title>
-              <Button 
-                onClick={handleCancel} 
-                block 
-                style={{ width: "100%", height: 100, fontSize: 25 }}
-              >
-                Cancel
-              </Button>
-            </>
-        }
-      </Flex>
-    </Flex>
+    <div style={containerStyle}>
+    {
+      !isActivated ?
+        <div style={boxStyle}>
+          <Radio.Group defaultValue={destination} size="large" onChange={handleDestinationChange}>
+            <Radio.Button value="Campus">Campus</Radio.Button>
+            <Radio.Button value="Home">Home</Radio.Button>
+          </Radio.Group>
+          <div>
+          <button onClick={handleRideRequest} className='custom-button2'>
+            I need a Ride!
+          </button>
+          </div>
+          <div style={{ marginTop: '10px' }}>
+          <button onClick={handleOfferDrive} className='custom-button2' style={{ paddingInline: '37%' }} disabled={!isDriver}>
+            I can Drive!
+          </button>
+          </div>
+        </div>
+      :
+        <div style={boxStyle}>
+          <Title>{activatedText}</Title>
+          <Button onClick={handleCancel} block>
+            Cancel
+          </Button>
+        </div>
+    }
+    </div>
   );
 };
 
