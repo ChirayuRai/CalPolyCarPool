@@ -9,6 +9,8 @@ import AvailableDriver from './pages/AvailableDriver';
 import RideRequest from './pages/RideRequest';
 import Profile from './pages/Profile';
 import Connect from './pages/Connect';
+import Registration from './pages/Registration';
+import Landing from './pages/Landing';
 
 const headerStyle: React.CSSProperties = {
   textAlign: 'center',
@@ -61,7 +63,8 @@ const App: React.FC = () => {
     <div className="App">
       {/* <Flex gap="middle" wrap="wrap"> */}
         <Layout style={layoutStyle}>
-          <AppHeader />
+          <Landing/>
+          {/* <AppHeader />
           <Content style={contentStyle}>
             {selectedView}
           </Content>
@@ -78,7 +81,7 @@ const App: React.FC = () => {
               </Footer>
             : 
               <></>
-          }
+          } */}
         </Layout>
       {/* </Flex> */}
     </div>
@@ -86,4 +89,3 @@ const App: React.FC = () => {
 };
 
 export default App;
-
