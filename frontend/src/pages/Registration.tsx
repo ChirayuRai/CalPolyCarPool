@@ -122,8 +122,6 @@ const Registration: React.FC = () => {
                 <Input prefix={<UserOutlined />} placeholder="Address" />
               </Form.Item>
 
-
-
               <Form.Item>
                 <button className='custom-button' style={{ width: '100%' }}>
                   Sign up

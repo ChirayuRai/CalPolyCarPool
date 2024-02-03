@@ -1,6 +1,7 @@
 import { Button, Flex, Radio, RadioChangeEvent } from 'antd';
 import Title from 'antd/es/typography/Title';
 import { useState } from 'react';
+import AppHeader from '../components/AppHeader'; // Import the AppHeader component
 
 const Home: React.FC = () => {
   const [isDriver, setIsDriver] = useState(true);
