@@ -65,7 +65,8 @@ const App: React.FC = () => {
     <div className="App">
       {/* <Flex gap="middle" wrap="wrap"> */}
         <Layout style={layoutStyle}>
-          <AppHeader />
+          <Landing/>
+          {/* <AppHeader />
           <Content style={contentStyle}>
             {selectedView}
           </Content>
@@ -82,7 +83,7 @@ const App: React.FC = () => {
               </Footer>
             : 
               <></>
-          }
+          } */}
         </Layout>
       {/* </Flex> */}
     </div>
@@ -90,4 +91,3 @@ const App: React.FC = () => {
 };
 
 export default App;
-

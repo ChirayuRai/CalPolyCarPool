@@ -19,7 +19,11 @@ const Landing: React.FC = () => {
     <Layout style={{ minHeight: '100vh' }}>
       <LoggedOutHeader onLogin={handleLogin} />
       <Content style={contentStyle}>
-        
+        <img
+          src="./src/assets/logo.png"
+          alt="Description of the image"
+          style={{ maxWidth: '15%', maxHeight: '15%', margin: 'auto' }}
+        />
       </Content>
     </Layout>
   );
