@@ -13,6 +13,12 @@ import Registration from './pages/Registration';
 import Landing from './pages/Landing';
 import Login from './pages/Login';
 import LoggedOutHeader from './components/LoggedOutHeader';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 
 const headerStyle: React.CSSProperties = {
   textAlign: 'center',
@@ -65,8 +71,7 @@ const App: React.FC = () => {
     <div className="App">
       {/* <Flex gap="middle" wrap="wrap"> */}
         <Layout style={layoutStyle}>
-          <Landing/>
-          {/* <AppHeader />
+          <AppHeader />
           <Content style={contentStyle}>
             {selectedView}
           </Content>
@@ -83,7 +88,7 @@ const App: React.FC = () => {
               </Footer>
             : 
               <></>
-          } */}
+          }
         </Layout>
       {/* </Flex> */}
     </div>

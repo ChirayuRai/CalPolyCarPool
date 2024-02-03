@@ -22,7 +22,7 @@ const Landing: React.FC = () => {
         <img
           src="./src/assets/logo.png"
           alt="Description of the image"
-          style={{ maxWidth: '15%', maxHeight: '15%', margin: 'auto' }}
+          style={{ maxWidth: '15%', maxHeight: '15%', margin: 'auto', marginTop: '250px' }}
         />
       </Content>
     </Layout>
