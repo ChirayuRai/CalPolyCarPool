@@ -1,23 +1,29 @@
-// Profile.tsx
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Row, Col, Avatar, Button, Rate } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 
 const Profile: React.FC = () => {
-  // Dummy data (replace with actual user data)
-  const userProfile = {
-    name: 'John Doe',
-    numericalRating: 4.5,
-    starRating: 4.5,
-    interests: ['Carpooling', 'Technology'],
-    gender: 'Male',
-    year: 4,
-    birthday: '1990-01-01',
-    role: 'Driver',
-    address: '123 Main St, City',
-    email: 'john.doe@example.com',
-    // Add more user details as needed
-  };
+  const [userProfile, setUserProfile] = useState({
+    name: '',
+    numericalRating: 0,
+    starRating: 0,
+    interests: [],
+    gender: '',
+    year: 0,
+    birthday: '',
+    role: '',
+    address: '',
+    email: '',
+  });
+
+  useEffect(() => {
+    // Make an API call to fetch user profile data
+    // Replace the following with your actual API endpoint
+    fetch('https://example.com/api/user/profile')
+      .then(response => response.json())
+      .then(data => setUserProfile(data))
+      .catch(error => console.error('Error fetching user profile:', error));
+  }, []); // Empty dependency array ensures the effect runs only once on mount
 
   return (
     <div style={{ height: '100vh', display: 'flex', flexDirection: 'column' }}>
