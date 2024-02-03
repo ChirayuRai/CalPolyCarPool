@@ -1,7 +1,12 @@
-import React from 'react'
+import InfiniteTable from '../components/InfiniteTable';
+import { Button } from 'antd';
 
-export default function AvailableDriver() {
+const AvailableDriver: React.FC = () => {
   return (
-    <div>availableDriver</div>
-  )
-}
+    <>
+      <InfiniteTable ActionButton={() => <Button>Join Ride</Button>}/>
+    </>
+  );
+};
+
+export default AvailableDriver;

@@ -8,6 +8,7 @@ import { RadioButtonProps } from 'antd/es/radio/radioButton';
 import AvailableDriver from './pages/AvailableDriver';
 import RideRequest from './pages/RideRequest';
 import Profile from './pages/Profile';
+import Connect from './pages/Connect';
 
 const headerStyle: React.CSSProperties = {
   textAlign: 'center',
@@ -36,7 +37,7 @@ const contentStyle: React.CSSProperties = {
 const footerStyle: React.CSSProperties = {
   textAlign: 'center',
   color: '#fff',
-  backgroundColor: '#4096ff',
+  // backgroundColor: '#4096ff',
 };
 
 const layoutStyle = {
@@ -58,7 +59,7 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
-      <Flex gap="middle" wrap="wrap">
+      {/* <Flex gap="middle" wrap="wrap"> */}
         <Layout style={layoutStyle}>
           <AppHeader />
           <Content style={contentStyle}>
@@ -71,6 +72,7 @@ const App: React.FC = () => {
                 <Radio.Button value={<Home />}>Home</Radio.Button>
                 <Radio.Button value={<AvailableDriver />}>Available Drivers</Radio.Button>
                 <Radio.Button value={<RideRequest />}>Rider Requests</Radio.Button>
+                <Radio.Button value={<Connect />}>Connect</Radio.Button>
                 <Radio.Button value={<Profile />}>Profile</Radio.Button>
               </Radio.Group>
               </Footer>
@@ -78,7 +80,7 @@ const App: React.FC = () => {
               <></>
           }
         </Layout>
-      </Flex>
+      {/* </Flex> */}
     </div>
   );
 };

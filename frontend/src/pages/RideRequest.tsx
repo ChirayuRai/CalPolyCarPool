@@ -1,7 +1,12 @@
-import React from 'react'
+import InfiniteTable from '../components/InfiniteTable';
+import { Button } from 'antd';
 
-export default function RideRequest() {
+const RideRequest: React.FC = () => {
   return (
-    <div>rideRequest</div>
-  )
-}
+    <>
+      <InfiniteTable ActionButton={() => <Button>Ping Rider</Button>}/>
+    </>
+  );
+};
+
+export default RideRequest;
