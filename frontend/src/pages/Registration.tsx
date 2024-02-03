@@ -125,7 +125,7 @@ const Registration: React.FC = () => {
 
 
               <Form.Item>
-                <button type="primary" className='custom-button' style={{ width: '100%' }}>
+                <button className='custom-button' style={{ width: '100%' }}>
                   Sign up
                 </button>
               </Form.Item>
