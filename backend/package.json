@@ -1,21 +1,19 @@
 {
-  "type": "module",
-  "name": "carpool_server",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "compile" : "tsc",
-    "start": "npm run compile && nodemon ./dist/index.js"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@apollo/server": "^4.10.0",
-    "graphql": "^16.8.1"
-  },
-  "devDependencies": {
-    "@types/node": "^20.11.16",
-    "typescript": "^5.3.3"
-  }
+    "type": "module",
+    "name": "carpool_server",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "nodemon ./src/index.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@apollo/server": "^4.10.0",
+        "dotenv": "^16.4.1",
+        "graphql": "^16.8.1",
+        "mysql2": "^3.9.1",
+        "nodemon": "3.0.3"
+    }
 }
