@@ -1,0 +1,18 @@
+/*styles.css*/
+.custom-button {
+  background-color: #FFBC12;
+  color: #FFFFFF;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  padding-inline: 5%;
+  border-radius: 8px;
+  font-weight: bold;
+  border: 0;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.custom-button:hover {
+  background-color: #C8A800;
+  color: #000000;
+  transform: scale(1.05);
+}

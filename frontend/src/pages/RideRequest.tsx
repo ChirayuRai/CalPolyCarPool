@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function rideRequest() {
+export default function RideRequest() {
   return (
     <div>rideRequest</div>
   )

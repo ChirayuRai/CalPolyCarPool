@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function availableDriver() {
+export default function AvailableDriver() {
   return (
     <div>availableDriver</div>
   )
