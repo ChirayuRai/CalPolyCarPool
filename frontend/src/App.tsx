@@ -9,6 +9,16 @@ import AvailableDriver from './pages/AvailableDriver';
 import RideRequest from './pages/RideRequest';
 import Profile from './pages/Profile';
 import Connect from './pages/Connect';
+import Registration from './pages/Registration';
+import Landing from './pages/Landing';
+import Login from './pages/Login';
+import LoggedOutHeader from './components/LoggedOutHeader';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 
 const headerStyle: React.CSSProperties = {
   textAlign: 'center',
@@ -86,4 +96,3 @@ const App: React.FC = () => {
 };
 
 export default App;
-
