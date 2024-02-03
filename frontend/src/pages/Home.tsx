@@ -1,4 +1,4 @@
-import { Button, Flex } from 'antd';
+import { Button, Flex, Radio, RadioChangeEvent } from 'antd';
 import Title from 'antd/es/typography/Title';
 import { useState } from 'react';
 
@@ -6,17 +6,18 @@ const Home: React.FC = () => {
   const [isDriver, setIsDriver] = useState(true);
   const [isActivated, setIsActivated] = useState(false);
   const [activatedText, setActivatedText] = useState("");
+  const [destination, setDestination] = useState("Campus");
 
 
   const handleRideRequest = () => {
     setIsActivated(true);
-    setActivatedText("Ride Requested!");
+    setActivatedText(`Ride requested to ${destination}!`);
     console.log("Initiating ride request...");
   };
 
   const handleOfferDrive = () => {
     setIsActivated(true);
-    setActivatedText("Driving!")
+    setActivatedText(`Driving to ${destination}!`)
     console.log("Offering to drive...");
   };
 
@@ -25,9 +26,13 @@ const Home: React.FC = () => {
     console.log("Cancelling...");
   }
 
+  const handleDestinationChange = (e: RadioChangeEvent) => {
+    setDestination(e.target.value);
+  }
+
   const boxStyle: React.CSSProperties = {
     width: '100%',
-    height: '100vh',
+    height: '80vh',
     padding: "0 500px",
   };
 
@@ -42,6 +47,10 @@ const Home: React.FC = () => {
         {
           !isActivated ?
             <>
+              <Radio.Group defaultValue={destination} size="large" onChange={handleDestinationChange}>
+                <Radio.Button value="Campus">Campus</Radio.Button>
+                <Radio.Button value="Home">Home</Radio.Button>
+              </Radio.Group>
               <Button 
                 onClick={handleRideRequest}
                 block 
@@ -49,9 +58,9 @@ const Home: React.FC = () => {
               >
                 I need a Ride!
               </Button>
-              <Button 
-                onClick={handleOfferDrive} 
-                block 
+              <Button
+                onClick={handleOfferDrive}
+                block
                 style={{ width: "100%", height: 100, fontSize: 25 }}
                 disabled={!isDriver}
               >
