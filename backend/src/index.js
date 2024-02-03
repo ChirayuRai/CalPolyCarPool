@@ -10,7 +10,6 @@ import resolvers from './resolvers.js';
 import pool from './dbConn.js';
 
 
-const main  = async() => {
   const app = express();
 
   const server = new ApolloServer({
@@ -27,4 +26,7 @@ const main  = async() => {
       db: pool
     }
   }));
-}
+
+
+
+export default await new Promise((resolve) => httpServer.listen({ port: 4000 }, resolve));
