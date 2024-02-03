@@ -5,14 +5,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "compile" : "tsc",
+    "compile": "tsc",
     "start": "npm run compile && nodemon ./dist/index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@apollo/server": "^4.10.0",
-    "graphql": "^16.8.1"
+    "dotenv": "^16.4.1",
+    "graphql": "^16.8.1",
+    "mysql2": "^3.9.1",
+    "ts-node": "^10.9.2"
   },
   "devDependencies": {
     "@types/node": "^20.11.16",
