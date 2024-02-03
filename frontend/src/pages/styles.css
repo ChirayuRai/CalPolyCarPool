@@ -16,3 +16,38 @@
   color: #000000;
   transform: scale(1.05);
 }
+
+.custom-button2 {
+  background-color: #ffffff;
+  color: black;
+  border: 1px solid #000000; /* Specify the border width and color */
+  padding-inline: 35%;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s;
+  text-align: center;
+}
+.custom-button2:hover {
+  color: hsl(209, 88%, 53%);
+  transform: scale(1.1);
+}
+
+.radio-group {
+  display: flex;
+  justify-content: center;
+}
+
+.radio-button {
+  flex-grow: 1;
+  margin: 0 5px;
+}
+
+.button {
+  font-size: 20px;
+}
+
+@media (max-width: 768px) {
+  .button {
+    font-size: 16px;
+  }
+}

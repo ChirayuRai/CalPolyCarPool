@@ -36,11 +36,11 @@ const contentStyle: React.CSSProperties = {
 const footerStyle: React.CSSProperties = {
   textAlign: 'center',
   color: '#fff',
-  backgroundColor: '#4096ff',
+  backgroundColor: '#004F0D',
 };
 
 const layoutStyle = {
-  overflow: 'hidden',
+  //overflow: 'hidden',
   height: '100vh'
   // width: 'calc(50% - 8px)',
   // maxWidth: 'calc(50% - 8px)',
