@@ -4,6 +4,7 @@ import { ApolloServerPluginDrainHttpServer } from '@apollo/server/plugin/drainHt
 import express from 'express';
 import http from 'http';
 import cors from 'cors';
+import bodyParser from "body-parser";
 import typeDefs from './typeDefs.js'
 import resolvers from './resolvers.js';
 import pool from './dbConn.js';
