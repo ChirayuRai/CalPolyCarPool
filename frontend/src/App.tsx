@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import AppHeader from './components/AppHeader';
 import LoggedOutHeader from './components/LoggedOutHeader';
 import Registration from './pages/Registration'
+import Landing from './pages/Landing'
 
 const App: React.FC = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
@@ -14,7 +15,7 @@ const App: React.FC = () => {
   return (
     <div>
       {isLoggedIn ? (
-        <Registration />
+        <Landing />
       ) : (
         <LoggedOutHeader onLogin={handleLogin} />
       )}
