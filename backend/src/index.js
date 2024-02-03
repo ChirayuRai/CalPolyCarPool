@@ -17,4 +17,5 @@ const vercel_server = await startStandaloneServer(server, {
 });
 
 console.log(`🚀  Server ready at: ${url}`);
+console.log("We are doing things")
 export default vercel_server
