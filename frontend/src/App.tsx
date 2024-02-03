@@ -41,7 +41,7 @@ const footerStyle: React.CSSProperties = {
 };
 
 const layoutStyle = {
-  overflow: 'hidden',
+  //overflow: 'hidden',
   height: '100vh'
   // width: 'calc(50% - 8px)',
   // maxWidth: 'calc(50% - 8px)',
