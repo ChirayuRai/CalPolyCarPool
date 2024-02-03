@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import './App.css'; // Assuming you have some CSS file for global styles
-import { Flex, Layout } from 'antd';
+import { Flex, Layout, Radio, RadioChangeEvent } from 'antd';
 import { Content, Footer, Header } from 'antd/es/layout/layout';
 import Home from './pages/Home';
 import AppHeader from './components/AppHeader';
+import { RadioButtonProps } from 'antd/es/radio/radioButton';
 
 const headerStyle: React.CSSProperties = {
   textAlign: 'center',
@@ -46,6 +47,19 @@ const layoutStyle = {
 const App: React.FC = () => {
   // Simulated authentication state
   const [isAuthenticated, setIsAuthenticated] = useState(true);
+  const [selectedView, setSelectedView] = useState(<Home />); 
+
+  const handleSelectedViewChange = (e: RadioChangeEvent) => {
+    let value = e.target.value;
+    if (value === "Home")
+      setSelectedView(<Home />);
+    else if (value === "Home")
+      setSelectedView(<Home />);
+    else if (value === "Home")
+      setSelectedView(<Home />);
+    else if (value === "Home")
+      setSelectedView(<Home />);
+  }
 
   return (
     <div className="App">
@@ -53,12 +67,15 @@ const App: React.FC = () => {
         <Layout style={layoutStyle}>
           <AppHeader />
           <Content style={contentStyle}>
-            <Home />
+            {selectedView}
           </Content>
           { 
             isAuthenticated ? 
               <Footer style={footerStyle}>
-                Footer
+              <Radio.Group defaultValue={selectedView.constructor.name} size="large" onChange={handleSelectedViewChange}>
+                <Radio.Button value="Campus">Campus</Radio.Button>
+                <Radio.Button value="Home">Home</Radio.Button>
+              </Radio.Group>
               </Footer>
             : 
               <></>
