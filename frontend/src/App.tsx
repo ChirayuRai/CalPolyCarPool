@@ -5,6 +5,9 @@ import { Content, Footer, Header } from 'antd/es/layout/layout';
 import Home from './pages/Home';
 import AppHeader from './components/AppHeader';
 import { RadioButtonProps } from 'antd/es/radio/radioButton';
+import AvailableDriver from './pages/AvailableDriver';
+import RideRequest from './pages/RideRequest';
+import Profile from './pages/Profile';
 
 const headerStyle: React.CSSProperties = {
   textAlign: 'center',
@@ -50,15 +53,7 @@ const App: React.FC = () => {
   const [selectedView, setSelectedView] = useState(<Home />); 
 
   const handleSelectedViewChange = (e: RadioChangeEvent) => {
-    let value = e.target.value;
-    if (value === "Home")
-      setSelectedView(<Home />);
-    else if (value === "Home")
-      setSelectedView(<Home />);
-    else if (value === "Home")
-      setSelectedView(<Home />);
-    else if (value === "Home")
-      setSelectedView(<Home />);
+    setSelectedView(e.target.value);
   }
 
   return (
@@ -72,9 +67,11 @@ const App: React.FC = () => {
           { 
             isAuthenticated ? 
               <Footer style={footerStyle}>
-              <Radio.Group defaultValue={selectedView.constructor.name} size="large" onChange={handleSelectedViewChange}>
-                <Radio.Button value="Campus">Campus</Radio.Button>
-                <Radio.Button value="Home">Home</Radio.Button>
+              <Radio.Group defaultValue={<Home />} size="large" onChange={handleSelectedViewChange}>
+                <Radio.Button value={<Home />}>Home</Radio.Button>
+                <Radio.Button value={<AvailableDriver />}>Available Drivers</Radio.Button>
+                <Radio.Button value={<RideRequest />}>Rider Requests</Radio.Button>
+                <Radio.Button value={<Profile />}>Profile</Radio.Button>
               </Radio.Group>
               </Footer>
             : 
