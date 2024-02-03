@@ -3,6 +3,7 @@ import './App.css'; // Assuming you have some CSS file for global styles
 import { Flex, Layout } from 'antd';
 import { Content, Footer, Header } from 'antd/es/layout/layout';
 import Home from './pages/Home';
+import AppHeader from './components/AppHeader';
 
 const headerStyle: React.CSSProperties = {
   textAlign: 'center',
@@ -10,7 +11,7 @@ const headerStyle: React.CSSProperties = {
   height: 64,
   paddingInline: 48,
   lineHeight: '64px',
-  backgroundColor: '#4096ff',
+  backgroundColor: '#004F0D',
 };
 
 const contentStyle: React.CSSProperties = {
@@ -18,7 +19,7 @@ const contentStyle: React.CSSProperties = {
   minHeight: 120,
   lineHeight: '120px',
   color: '#fff',
-  backgroundColor: '#0958d9',
+  backgroundColor: '#FFFF',
 };
 
 // const siderStyle: React.CSSProperties = {
@@ -35,7 +36,6 @@ const footerStyle: React.CSSProperties = {
 };
 
 const layoutStyle = {
-  borderRadius: 8,
   overflow: 'hidden',
   height: '100vh'
   // width: 'calc(50% - 8px)',
@@ -51,7 +51,7 @@ const App: React.FC = () => {
     <div className="App">
       <Flex gap="middle" wrap="wrap">
         <Layout style={layoutStyle}>
-          <Header style={headerStyle}>Header</Header>
+          <AppHeader />
           <Content style={contentStyle}>
             <Home />
           </Content>
