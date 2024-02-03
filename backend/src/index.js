@@ -40,6 +40,7 @@ app.use(
   // an Apollo Server instance and optional configuration options
   expressMiddleware(server, {
     context: async ({ req }) => ({ db: pool }),
+    path: "/graphql"
   }),
 );
 
