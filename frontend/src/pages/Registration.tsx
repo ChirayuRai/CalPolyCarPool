@@ -16,7 +16,7 @@ const RegistrationPage: React.FC = () => (
   <Layout style={{ minHeight: '100vh' }}>
     <AppHeader />
     <Content style={contentStyle}>
-      Content
+      
     </Content>
   </Layout>
 );

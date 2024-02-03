@@ -28,10 +28,12 @@ const LoggedOutHeader: React.FC<{ onLogin: () => void }> = ({ onLogin }) => {
         </div>
         <div className={!nav ? 'fixed left-0 top-0 w-[60%] h-full border-r border-r-white-900 bg-[#004F0D] ease-in-out duration-500' : 'fixed left-[-100%]'}>
           <Title level={3} style={{ margin: '15px 0', color: '#FFFFFF', textAlign: 'left', marginLeft: '16px' }}>CalPolyCarPool</Title>
-          <ul className='uppercase p-4'>
-            <li className='p-4 border-b border-white-600'>Login</li>
-            <li className='p-4'>Signup</li>
-          </ul>
+          <div>
+            <button className='w-full p-4 border-b border-white-600 uppercase'>Login</button>
+          </div>
+          <div>
+            <button className='w-full p-4 uppercase'>Signup</button>
+          </div>
         </div>
       </Row>
     </Header>
