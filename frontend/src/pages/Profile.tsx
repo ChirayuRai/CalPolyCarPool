@@ -1,13 +1,14 @@
 // Profile.tsx
 import React from 'react';
-import { Row, Col, Avatar, Button } from 'antd';
+import { Row, Col, Avatar, Button, Rate } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 
 const Profile: React.FC = () => {
   // Dummy data (replace with actual user data)
   const userProfile = {
     name: 'John Doe',
-    rating: 4.5,
+    numericalRating: 4.5,
+    starRating: 4.5,
     interests: ['Carpooling', 'Technology'],
     gender: 'Male',
     year: 4,
@@ -30,7 +31,10 @@ const Profile: React.FC = () => {
               <Col span={8}>
                 <Avatar size={100} icon={<UserOutlined />} />
                 <h2 style={{ textAlign: 'center', marginTop: '1rem' }}>{userProfile.name}</h2>
-                <p style={{ textAlign: 'center' }}>Rating: {userProfile.rating}</p>
+                <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
+                  <p>Rating: {userProfile.numericalRating}</p>
+                  <Rate allowHalf disabled defaultValue={userProfile.starRating} style={{ fontSize: 16 }} />
+                </div>
               </Col>
               <Col span={16}>
                 <p><strong>Interests:</strong> {userProfile.interests.join(', ')}</p>
