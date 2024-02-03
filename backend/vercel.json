@@ -8,8 +8,9 @@
     ],
     "redirects": [
         {
-            "src": "/graphql",
-            "dest": "src/index.js"
+            "source": "/graphql",
+            "destination": "src/index.js",
+            "permanent": false
         }
     ]
 }
