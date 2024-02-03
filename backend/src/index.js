@@ -23,4 +23,4 @@ const server = new ApolloServer({
 
 // console.log(`🚀  Server ready at: ${vercel_server.url}`);
 console.log("We are doing things")
-export default server
+export default server.createHandler();
