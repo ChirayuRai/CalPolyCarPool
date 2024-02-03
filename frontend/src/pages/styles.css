@@ -2,6 +2,9 @@
 .custom-button {
   background-color: #FFBC12;
   color: #FFFFFF;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  padding-inline: 5%;
   border-radius: 8px;
   font-weight: bold;
   border: 0;

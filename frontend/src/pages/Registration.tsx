@@ -42,29 +42,31 @@ const Registration: React.FC = () => {
       <Content style={contentStyle}>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '20px' }}>
           <div style={{ backgroundColor: '#fff', padding: '20px', borderRadius: '8px', boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)', width: '350px' }}>
-          <h2 style={{ textAlign: 'center', fontSize: '1.5rem', marginBottom: '-4.5rem' }}>Let's get you Registered</h2>
-          <p style={{ textAlign: 'center', marginBottom: '1px', fontSize: '1rem' }}>Enter your information</p>
+            <h2 style={{ textAlign: 'center', fontSize: '1.5rem', marginBottom: '-4.5rem' }}>Let's get you Registered</h2>
+            <p style={{ textAlign: 'center', marginBottom: '1px', fontSize: '1rem' }}>Enter your information</p>
             <Form
               name="registration"
               initialValues={{ remember: true }}
               onFinish={onFinish}
             >
+              <b className='flex justify-start'>Email</b>
               <Form.Item
+                
                 name="email"
                 rules={[{ required: true, message: 'Please input your email!' }]}
               >
                 <Input prefix={<UserOutlined />} placeholder="Email" />
               </Form.Item>
 
-              {/* Add other form items like Name, College Year, Major, Gender, Birth Date, etc. */}
-              {/* Example: */}
+              <b className='flex justify-start'>Name</b>
               <Form.Item
                 name="name"
                 rules={[{ required: true, message: 'Please input your name!' }]}
               >
                 <Input prefix={<UserOutlined />} placeholder="Name" />
               </Form.Item>
-
+              
+              <b className='flex justify-start'>College Year</b>
               <Form.Item
                 name="College Year"
                 rules={[{ required: true, message: 'Please input your College year!' }]}
@@ -72,6 +74,7 @@ const Registration: React.FC = () => {
                 <Input prefix={<UserOutlined />} placeholder="College Year" />
               </Form.Item>
 
+              <b className='flex justify-start'>Major</b>
               <Form.Item
                 name="Major"
                 rules={[{ required: true, message: 'Please input your Major!' }]}
@@ -79,6 +82,7 @@ const Registration: React.FC = () => {
                 <Input prefix={<UserOutlined />} placeholder="Major" />
               </Form.Item>
 
+              <b className='flex justify-start'>Gender</b>
               <Form.Item
                 name="Gender"
                 rules={[{ required: true, message: 'Please input your Gender!' }]}
@@ -86,6 +90,7 @@ const Registration: React.FC = () => {
                 <Input prefix={<UserOutlined />} placeholder="Gender" />
               </Form.Item>
 
+              <b className='flex justify-start'>Date of Birth</b>
               <Form.Item
                 name="DOB"
                 rules={[{ required: true, message: 'Please input your Date of Birth!' }]}
@@ -93,8 +98,8 @@ const Registration: React.FC = () => {
                 <Input prefix={<UserOutlined />} placeholder="Date of Birth (MM/DD/YYYY)" />
               </Form.Item>
 
-              {/* Interest Fields */}
-              <Form.Item label={<b>Interest</b>}>
+              <b className='flex justify-start'>Interest</b>
+              <Form.Item>
                 {interestFields.map((field, index) => (
                   <div key={index}>
                     <Form.Item
@@ -104,10 +109,10 @@ const Registration: React.FC = () => {
                     >
                       <Input placeholder="Interest" />
                     </Form.Item>
-                    <Button className="custom-button" type="link" onClick={() => handleRemoveInterestField(index)}>-</Button>
+                    <button className="custom-button" style={{marginLeft: '2px'}} onClick={() => handleRemoveInterestField(index)}>-</button>
                   </div>
                 ))}
-                <Button className="custom-button" type="link" onClick={handleAddInterestField}>+</Button>
+                <button className="custom-button" style={{ paddingInline: '15%' }} onClick={handleAddInterestField}>+</button>
               </Form.Item>
 
               <Form.Item
@@ -117,10 +122,12 @@ const Registration: React.FC = () => {
                 <Input prefix={<UserOutlined />} placeholder="Address" />
               </Form.Item>
 
+
+
               <Form.Item>
-                <Button type="primary" htmlType="submit" style={{ width: '100%' }}>
+                <button type="primary" className='custom-button' style={{ width: '100%' }}>
                   Sign up
-                </Button>
+                </button>
               </Form.Item>
             </Form>
           </div>
