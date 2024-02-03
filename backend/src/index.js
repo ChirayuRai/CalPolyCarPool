@@ -39,6 +39,7 @@ app.use(
   }),
 );
 
+console.log("I hate coding")
 
 // export default await new Promise((resolve) => httpServer.listen({ port: 4000 }, resolve));
 export default app
