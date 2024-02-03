@@ -9,7 +9,7 @@ const server = new ApolloServer({
   resolvers,
 });
 
-const { url } = await startStandaloneServer(server, {
+const vercel_server = await startStandaloneServer(server, {
   listen: { port: 4000 },
   context: async ({ req, res }) => ({
     db: pool,
@@ -17,4 +17,4 @@ const { url } = await startStandaloneServer(server, {
 });
 
 console.log(`🚀  Server ready at: ${url}`);
-export default url
+export default vercel_server
