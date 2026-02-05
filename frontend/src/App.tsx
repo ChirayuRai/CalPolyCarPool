@@ -69,6 +69,7 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
+      {/* <Registration/> */}
       {/* <Flex gap="middle" wrap="wrap"> */}
         <Layout style={layoutStyle}>
           <AppHeader />
